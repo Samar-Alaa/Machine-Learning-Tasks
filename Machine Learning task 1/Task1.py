@@ -7,6 +7,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import SGDClassifier
 from sklearn.metrics import confusion_matrix
+from sklearn.metrics import accuracy_score
 
 mnist =  pd.read_csv("MNIST.csv")
 
@@ -30,6 +31,9 @@ def digit_3_classification():
 
     confusionMatrix = confusion_matrix(test_lbl_3, prediction_digit_3)
 
+
+    accuracy = accuracy_score(test_lbl_3, prediction_digit_3)
+    print ("accuracy score", accuracy)
     print ("1- binary prediction for digit 3 : \n", prediction_digit_3)
     print ("2- Confusion matrix : \n", confusionMatrix)
 
